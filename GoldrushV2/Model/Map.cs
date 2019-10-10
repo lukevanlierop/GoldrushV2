@@ -6,7 +6,25 @@ using System.Threading.Tasks;
 
 namespace GoldrushV2.Model
 {
-    class Map
+    public class Map
     {
+        public Tile First { get; set; }
+
+        public Tile Find(int id)
+        {
+            Tile current = First;
+ 
+            while(current != null)
+            {
+                if(current.Id == id)
+                {
+                    return current;
+                }
+
+                current = current.Right;
+            }
+
+            return null;
+        }
     }
 }

@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GoldrushV2.Model.Tiles
+namespace GoldrushV2.Model.Movables
 {
-    public class Dock : Rail
+    class Ship
     {
-        public override string Icon { get; set; } = "D";
     }
 }

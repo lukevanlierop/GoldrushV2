@@ -1,0 +1,7 @@
+C:\Github\GoldrushV2\GoldrushV2\bin\Debug\GoldrushV2.exe.config
+C:\Github\GoldrushV2\GoldrushV2\bin\Debug\GoldrushV2.exe
+C:\Github\GoldrushV2\GoldrushV2\bin\Debug\GoldrushV2.pdb
+C:\Github\GoldrushV2\GoldrushV2\obj\Debug\GoldrushV2.csprojAssemblyReference.cache
+C:\Github\GoldrushV2\GoldrushV2\obj\Debug\GoldrushV2.csproj.CoreCompileInputs.cache
+C:\Github\GoldrushV2\GoldrushV2\obj\Debug\GoldrushV2.exe
+C:\Github\GoldrushV2\GoldrushV2\obj\Debug\GoldrushV2.pdb

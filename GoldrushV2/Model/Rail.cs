@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace GoldrushV2.Model.Tiles
 {
-    class Rail
+    public class Rail : Tile
     {
+        public override string Icon { get; set; } = "-";
+        public override Movable Movable { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }

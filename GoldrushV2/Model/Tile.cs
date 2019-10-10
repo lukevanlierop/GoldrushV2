@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace GoldrushV2.Model
 {
-    class Tile
+    public abstract class Tile
     {
+        public abstract string Icon { get; set; }
+        public abstract Movable Movable { get; set; }
+        public Tile Right { get; set; }
+        public Tile Next { get; set; }
+        public int Id { get; set; }
     }
 }

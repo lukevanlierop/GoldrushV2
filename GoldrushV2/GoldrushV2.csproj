@@ -43,10 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Builder\MapBuilder.cs" />
+    <Compile Include="Controller\MainController.cs" />
+    <Compile Include="Model\Game.cs" />
     <Compile Include="Model\Map.cs" />
+    <Compile Include="Model\Movable.cs" />
+    <Compile Include="Model\Movables\Cart.cs" />
+    <Compile Include="Model\Movables\Ship.cs" />
     <Compile Include="Model\Rails\Switch.cs" />
     <Compile Include="Model\Rails\Warehouse.cs" />
     <Compile Include="Model\Rails\Yard.cs" />
+    <Compile Include="Model\Routes.cs" />
     <Compile Include="Model\Tiles\Empty.cs" />
     <Compile Include="Model\Rails\Dock.cs" />
     <Compile Include="Model\Rail.cs" />
@@ -54,13 +61,11 @@
     <Compile Include="Model\Tiles\Water.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\MainView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controller\" />
-    <Folder Include="View\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
