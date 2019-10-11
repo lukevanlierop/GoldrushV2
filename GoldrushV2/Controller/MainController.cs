@@ -28,7 +28,7 @@ namespace GoldrushV2.Controller
             _mv.PrintMap(_map);
             _game = new Game(_map);
             seconds = 0;
-            RunGame();
+           // RunGame();
 
         }
 
@@ -42,7 +42,7 @@ namespace GoldrushV2.Controller
         {
             Timer timer = new Timer();
             timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            timer.Interval = 1000;
+            timer.Interval = 100;
             timer.Enabled = true;
         }
 

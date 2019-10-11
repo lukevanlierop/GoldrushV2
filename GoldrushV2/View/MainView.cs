@@ -19,30 +19,30 @@ namespace GoldrushV2.View
             {
                 if (count < 12)
                 {
-                    if (current.Movable != null)
-                    {
-                        Console.Write(current.Movable.Icon);
-                    }
+                    //if (current.Movable != null)
+                    //{
+                    //    Console.Write(current.Movable.Icon);
+                    //}
 
-                    else
-                    {
-                        Console.Write(current.Icon);
-                    }
-
+                    //else
+                    //{
+                    //    Console.Write(current.Icon);
+                    //}
+                    Console.Write(current.Id + " ");
                 }
 
                 else
                 {
-                    if (current.Movable != null)
-                    {
-                        Console.WriteLine(current.Movable.Icon);
-                    }
+                    //if (current.Movable != null)
+                    //{
+                    //    Console.WriteLine(current.Movable.Icon);
+                    //}
 
-                    else
-                    {
-                        Console.WriteLine(current.Icon);
-                    }
-
+                    //else
+                    //{
+                    //    Console.WriteLine(current.Icon);
+                    //}
+                    Console.WriteLine(current.Id + " ");
                     count = 0;
                 }
 

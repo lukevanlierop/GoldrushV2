@@ -99,12 +99,16 @@ namespace GoldrushV2.Builder
 
             _newTile = new Switch();
             InitTile();
+            Console.WriteLine(_newTile.Id);
+
 
             _newTile = new Rail();
             InitTile();
 
             _newTile = new Switch();
             InitTile();
+            Console.WriteLine(_newTile.Id);
+
 
             for (int i = 0; i < 3; i++)
             {
@@ -114,6 +118,7 @@ namespace GoldrushV2.Builder
 
             _newTile = new Switch();
             InitTile();
+            Console.WriteLine(_newTile.Id);
 
             for (int i = 0; i < 2; i++)
             {
@@ -165,10 +170,12 @@ namespace GoldrushV2.Builder
 
             _newTile = new Switch();
             InitTile();
+            Console.WriteLine(_newTile.Id);
             _newTile = new Rail();
             InitTile();
             _newTile = new Switch();
             InitTile();
+            Console.WriteLine(_newTile.Id);
 
             for (int i = 0; i < 3; i++)
             {
