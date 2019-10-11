@@ -9,6 +9,11 @@ namespace GoldrushV2.Model.Tiles
     public class Rail : Tile
     {
         public override string Icon { get; set; } = "-";
-        public override Movable Movable { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public override Movable Movable { get; set; }
+
+        public override bool CanMove()
+        {
+            return true;
+        }
     }
 }

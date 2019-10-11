@@ -8,7 +8,7 @@ namespace GoldrushV2.Model
 {
     public abstract class Movable
     {
-        public abstract Tile Tile { get; set; }
+        public abstract Tile CurrentTile { get; set; }
         public abstract void Move();
         public abstract string Icon { get; }
     }

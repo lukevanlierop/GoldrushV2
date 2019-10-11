@@ -10,6 +10,7 @@ namespace GoldrushV2.Model
     {
         public abstract string Icon { get; set; }
         public abstract Movable Movable { get; set; }
+        public abstract bool CanMove();
         public Tile Right { get; set; }
         public Tile Next { get; set; }
         public int Id { get; set; }

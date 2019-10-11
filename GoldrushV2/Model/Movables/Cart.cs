@@ -8,7 +8,7 @@ namespace GoldrushV2.Model.Movables
 {
     public class Cart : Movable
     {
-        public override Tile Tile { get; set; }
+        public override Tile CurrentTile { get; set; }
         public bool Full { get; set; } = true;
 
         public override string Icon
@@ -22,12 +22,18 @@ namespace GoldrushV2.Model.Movables
 
         public Cart(Tile tile)
         {
-            Tile = tile;
+            CurrentTile = tile;
         }
 
         public override void Move()
         {
-            Tile = Tile.Next;
+            if(CurrentTile.CanMove())
+            {
+                CurrentTile.Movable = null;
+                CurrentTile = CurrentTile.Next;
+                CurrentTile.Movable = this;
+            }
+            
         }
     }
 }

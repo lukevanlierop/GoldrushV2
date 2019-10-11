@@ -27,7 +27,16 @@ namespace GoldrushV2.Model
             Tile SpawnTile = _map.Find(warehouses[index]);
 
             Cart cart = new Cart(SpawnTile);
+            SpawnTile.Movable = cart;
             _carts.Add(cart);
+        }
+
+        public void Move()
+        {
+            foreach(Cart cart in _carts)
+            {
+                cart.Move();
+            }
         }
     }
 }

@@ -11,21 +11,38 @@ namespace GoldrushV2.View
     {
         public void PrintMap(Map map)
         {
+            Console.Clear();
+
             Tile current = map.First;
             int count = 1;
-            while(current != null)
+            while (current != null)
             {
                 if (count < 12)
                 {
-                    Console.Write(current.Icon);
-                    //Console.Write(current.Id + " ");
+                    if (current.Movable != null)
+                    {
+                        Console.Write(current.Movable.Icon);
+                    }
+
+                    else
+                    {
+                        Console.Write(current.Icon);
+                    }
 
                 }
 
                 else
                 {
-                    Console.WriteLine(current.Icon);
-                    //Console.WriteLine(current.Id + " ");
+                    if (current.Movable != null)
+                    {
+                        Console.WriteLine(current.Movable.Icon);
+                    }
+
+                    else
+                    {
+                        Console.WriteLine(current.Icon);
+                    }
+
                     count = 0;
                 }
 

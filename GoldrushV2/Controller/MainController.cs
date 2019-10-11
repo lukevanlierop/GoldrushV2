@@ -42,12 +42,13 @@ namespace GoldrushV2.Controller
         {
             Timer timer = new Timer();
             timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            timer.Interval = 200;
+            timer.Interval = 1000;
             timer.Enabled = true;
         }
 
         private void OnTimedEvent(object source, ElapsedEventArgs e)
         {
+            _game.Move(); 
             seconds++;
 
             if (seconds == 5)
@@ -55,6 +56,8 @@ namespace GoldrushV2.Controller
                 _game.SpawnCart();
                 seconds = 0;
             }
+
+            _mv.PrintMap(_map);
         }
 
 
