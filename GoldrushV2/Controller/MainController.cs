@@ -28,7 +28,7 @@ namespace GoldrushV2.Controller
             _mv.PrintMap(_map);
             _game = new Game(_map);
             seconds = 0;
-           // RunGame();
+            RunGame();
 
         }
 

@@ -9,13 +9,13 @@ namespace GoldrushV2.Model.Movables
     public class Cart : Movable
     {
         public override Tile CurrentTile { get; set; }
-        public bool Full { get; set; } = true;
+        public bool IsFull { get; set; } = true;
 
         public override string Icon
         {
             get
             {
-                if (Full) return "ü";
+                if (IsFull) return "ü";
                 else return "u";
             }
         }

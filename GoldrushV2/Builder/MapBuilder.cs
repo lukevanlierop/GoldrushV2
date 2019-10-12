@@ -21,6 +21,7 @@ namespace GoldrushV2.Builder
             _map = new Map();
             CreateMap();
             CreateRoutes();
+            ConnectSwitches();
         }
 
         public void CreateMap()
@@ -255,6 +256,13 @@ namespace GoldrushV2.Builder
 
             CreateRoute(Routes.routeFour, previousTile, currentTile);
 
+        }
+
+        public void ConnectSwitches()
+        {
+            Switch currentSwitch = (Switch)_map.Find(52);
+            currentSwitch.Previous = _map.Find(40);
+            currentSwitch.Next = _map.Find(53);
         }
 
         private void InitTile()
