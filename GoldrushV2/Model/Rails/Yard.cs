@@ -11,7 +11,7 @@ namespace GoldrushV2.Model.Rails
     {
         public override string Icon { get; set; } = "_";
 
-        public override bool CanMove()
+        public override bool CanMove(Tile tile)
         {
             if(Next != null)
             {

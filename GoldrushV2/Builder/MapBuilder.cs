@@ -40,7 +40,10 @@ namespace GoldrushV2.Builder
             }
 
             //second row
-            for (int i = 0; i < 9; i++)
+            _newTile = new Final();
+            InitTile();
+
+            for (int i = 0; i < 8; i++)
             {
                 _newTile = new Rail();
                 InitTile();
@@ -98,17 +101,17 @@ namespace GoldrushV2.Builder
                 InitTile();
             }
 
-            _newTile = new Switch();
+            _newTile = new BackwardSwitch();
             InitTile();
-            Console.WriteLine(_newTile.Id);
+        
 
 
             _newTile = new Rail();
             InitTile();
 
-            _newTile = new Switch();
+            _newTile = new ForwardSwitch();
             InitTile();
-            Console.WriteLine(_newTile.Id);
+           
 
 
             for (int i = 0; i < 3; i++)
@@ -117,9 +120,9 @@ namespace GoldrushV2.Builder
                 InitTile();
             }
 
-            _newTile = new Switch();
+            _newTile = new BackwardSwitch();
             InitTile();
-            Console.WriteLine(_newTile.Id);
+         
 
             for (int i = 0; i < 2; i++)
             {
@@ -169,14 +172,14 @@ namespace GoldrushV2.Builder
                 InitTile();
             }
 
-            _newTile = new Switch();
+            _newTile = new BackwardSwitch();
             InitTile();
-            Console.WriteLine(_newTile.Id);
+       
             _newTile = new Rail();
             InitTile();
-            _newTile = new Switch();
+            _newTile = new ForwardSwitch();
             InitTile();
-            Console.WriteLine(_newTile.Id);
+      
 
             for (int i = 0; i < 3; i++)
             {
@@ -260,9 +263,43 @@ namespace GoldrushV2.Builder
 
         public void ConnectSwitches()
         {
-            Switch currentSwitch = (Switch)_map.Find(52);
+            Switch currentSwitch;
+
+            //first
+            currentSwitch = (Switch)_map.Find(52);
             currentSwitch.Previous = _map.Find(40);
             currentSwitch.Next = _map.Find(53);
+            currentSwitch.Spare = _map.Find(64);
+            currentSwitch.Icon = "\\";
+
+            //second
+            currentSwitch = (Switch)_map.Find(54);
+            currentSwitch.Previous = _map.Find(53);
+            currentSwitch.Next = _map.Find(42);
+            currentSwitch.Spare = _map.Find(66);
+            currentSwitch.Icon = "/";
+
+            //third
+            currentSwitch = (Switch)_map.Find(58);
+            currentSwitch.Previous = _map.Find(46);
+            currentSwitch.Next = _map.Find(59);
+            currentSwitch.Spare = _map.Find(70);
+            currentSwitch.Icon = "\\";
+
+            //fourth
+            currentSwitch = (Switch)_map.Find(79);
+            currentSwitch.Previous = _map.Find(67);
+            currentSwitch.Next = _map.Find(80);
+            currentSwitch.Spare = _map.Find(91);
+            currentSwitch.Icon = "\\";
+
+            //fifth
+            currentSwitch = (Switch)_map.Find(81);
+            currentSwitch.Previous = _map.Find(80);
+            currentSwitch.Next = _map.Find(93);
+            currentSwitch.Spare = _map.Find(69);
+            currentSwitch.Icon = "\\";
+
         }
 
         private void InitTile()

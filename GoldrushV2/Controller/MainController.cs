@@ -1,5 +1,7 @@
 ﻿using GoldrushV2.Builder;
 using GoldrushV2.Model;
+using GoldrushV2.Model.Rails;
+using GoldrushV2.Util;
 using GoldrushV2.View;
 using System;
 using System.Collections.Generic;
@@ -15,7 +17,9 @@ namespace GoldrushV2.Controller
         private MainView _mv;
         private Map _map;
         private Game _game;
+        private InputReader _inputReader;
         private int seconds;
+        private bool _play;
 
         public MainController()
         {
@@ -27,8 +31,9 @@ namespace GoldrushV2.Controller
             BuildMap();
             _mv.PrintMap(_map);
             _game = new Game(_map);
+            _inputReader = new InputReader();
             seconds = 0;
-            RunGame();
+            PlayGame();
 
         }
 
@@ -38,12 +43,19 @@ namespace GoldrushV2.Controller
             _map = builder.Build();
         }
 
-        private void RunGame()
+        private void PlayGame()
         {
             Timer timer = new Timer();
             timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
             timer.Interval = 100;
             timer.Enabled = true;
+            _play = true;
+
+            while(_play)
+            {
+                string key = _inputReader.GetInput();
+                ShiftSwitch(key);
+            }
         }
 
         private void OnTimedEvent(object source, ElapsedEventArgs e)
@@ -58,6 +70,16 @@ namespace GoldrushV2.Controller
             }
 
             _mv.PrintMap(_map);
+        }
+
+        private void ShiftSwitch(string id)
+        {
+            //verander icon
+            //set previous
+            //set next
+
+            Switch sw = (Switch)_map.Find(Convert.ToInt32(id));
+            sw.Shift();
         }
 
 

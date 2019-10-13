@@ -7,23 +7,35 @@ using System.Threading.Tasks;
 
 namespace GoldrushV2.Model.Rails
 {
-    class Switch : Rail
+    public abstract class Switch : Rail
     {
         public Tile Previous { get; set; }
-        public override string Icon { get; set; } = "x";
+        public Tile Spare { get; set; }
+        public override string Icon { get; set; } = "/";
 
-        public override bool CanMove()
+        public void ChangeIcon()
         {
-            if (Next != null)
+            if (Icon == "/")
             {
-                if (Next.Movable == null)
-                {
-                    return true;
-                }
-                return false;
+                Icon = "\\";
+            }
+
+            else
+            {
+                Icon = "/";
+            }
+        }
+
+        public override bool CanMove(Tile tile)
+        {
+            if(Previous == tile)
+            {
+                return true;
             }
 
             return false;
         }
+
+        public abstract void Shift();
     }
 }

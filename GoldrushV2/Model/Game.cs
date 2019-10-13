@@ -33,10 +33,24 @@ namespace GoldrushV2.Model
 
         public void Move()
         {
+            //List<Cart> temp = new List<Cart>();
+
             foreach(Cart cart in _carts)
             {
                 cart.Move();
+
+               //if(cart.CurrentTile.IsFinal)
+               //{
+               //     temp.Add(cart);
+               //}
             }
+
+            //foreach(Cart cart in temp)
+            //{
+            //    _carts.Remove(cart);
+            //}
+
+            //temp.Clear();
         }
     }
 }

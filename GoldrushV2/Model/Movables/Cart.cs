@@ -27,11 +27,12 @@ namespace GoldrushV2.Model.Movables
 
         public override void Move()
         {
-            if(CurrentTile.CanMove())
+            if(CurrentTile.Next.CanMove(CurrentTile))
             {
                 CurrentTile.Movable = null;
                 CurrentTile = CurrentTile.Next;
                 CurrentTile.Movable = this;
+                
             }
             
         }
