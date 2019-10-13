@@ -74,10 +74,6 @@ namespace GoldrushV2.Controller
 
         private void ShiftSwitch(string id)
         {
-            //verander icon
-            //set previous
-            //set next
-
             Switch sw = (Switch)_map.Find(Convert.ToInt32(id));
             sw.Shift();
         }
