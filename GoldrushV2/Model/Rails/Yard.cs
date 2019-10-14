@@ -15,13 +15,12 @@ namespace GoldrushV2.Model.Rails
         {
             if(Next != null)
             {
-                if(Next.Movable == null)
+                if (Movable == null)
                 {
                     return true;
                 }
-                return false;
             }
-
+          
             return false;
         }
     }

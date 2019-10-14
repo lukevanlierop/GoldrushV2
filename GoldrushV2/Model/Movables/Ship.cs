@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace GoldrushV2.Model.Movables
 {
-    class Ship
+    public class Ship : Movable
     {
+        public override Tile CurrentTile { get; set; }
+
+        public override string Icon { get; } = "0";
+
+        public override bool IsFull { get; set; } = false;
+
+        public override void Move()
+        {
+            if (CurrentTile.Next == null)
+            {
+                CurrentTile.Movable = null;
+            }
+
+        }
     }
 }

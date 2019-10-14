@@ -47,7 +47,7 @@ namespace GoldrushV2.Controller
         {
             Timer timer = new Timer();
             timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            timer.Interval = 100;
+            timer.Interval = _game.GameSpeed;
             timer.Enabled = true;
             _play = true;
 
@@ -66,6 +66,7 @@ namespace GoldrushV2.Controller
             if (seconds == 5)
             {
                 _game.SpawnCart();
+                _game.SpawnShip();
                 seconds = 0;
             }
 

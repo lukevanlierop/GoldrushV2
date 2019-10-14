@@ -11,11 +11,17 @@ namespace GoldrushV2.Model
     {
         private List<Cart> _carts;
         private Map _map;
+        private Ship _ship;
+
+        public int GameSpeed { get; }
+        public int Score { get; }
 
         public Game(Map map)
         {
             _carts = new List<Cart>();
             _map = map;
+            Score = 0;
+            GameSpeed = 200;
         }
 
         public void SpawnCart()
@@ -31,8 +37,25 @@ namespace GoldrushV2.Model
             _carts.Add(cart);
         }
 
+        public void SpawnShip()
+        {
+            if(_ship == null)
+            {
+                _ship = new Ship();
+                _ship.CurrentTile = _map.First;
+                _map.First.Movable = _ship;
+            }
+           
+        }
+
         public void Move()
         {
+            if(_ship != null)
+            {
+                _ship.Move();
+            }
+            
+
             foreach(Cart cart in _carts)
             {
                 cart.Move();

@@ -11,5 +11,6 @@ namespace GoldrushV2.Model
         public abstract Tile CurrentTile { get; set; }
         public abstract void Move();
         public abstract string Icon { get; }
+        public abstract bool IsFull { get; set; }
     }
 }

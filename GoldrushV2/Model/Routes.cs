@@ -12,5 +12,6 @@ namespace GoldrushV2.Model
        public static readonly int[] routeTwo = new int[] { 61, 62, 63, 64, 52, 66, 67, 79, 80, 81, 93, 94, 95, 96, 108, 107, 106, 105, 104, 103, 102, 101, 100, 99, 98 };
        public static readonly int[] routeThree = new int[] { 69, 70, 58 };
        public static readonly int[] routeFour = new int[] { 85, 86, 87, 88, 89, 90, 91, 79 };
+       public static readonly int[] water = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
     }
 }

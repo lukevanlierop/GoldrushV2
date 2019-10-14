@@ -36,14 +36,15 @@ namespace GoldrushV2.Builder
             for (int i=0; i<11; i++)
             {
                 _newTile = new Water();
+                if(i == 8)
+                {
+                    ((Water)_newTile).IsNextToDock = true;
+                }
                 InitTile();
             }
 
             //second row
-            _newTile = new Final();
-            InitTile();
-
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 9; i++)
             {
                 _newTile = new Rail();
                 InitTile();
@@ -247,6 +248,9 @@ namespace GoldrushV2.Builder
         {
             Tile previousTile = null;
             Tile currentTile = null;
+
+            CreateRoute(Routes.water, previousTile, currentTile);
+            previousTile = null;
 
             CreateRoute(Routes.routeOne, previousTile, currentTile);
             previousTile = null;
