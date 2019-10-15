@@ -12,7 +12,7 @@ namespace GoldrushV2.Util
         {
             var input = Console.ReadKey();
 
-            //return switch id
+            // Return switch ID
             switch (input.Key)
             {
                 case ConsoleKey.D1:
@@ -27,9 +27,9 @@ namespace GoldrushV2.Util
                     return "81";
                 case ConsoleKey.S:
                     return "s";
+                default:
+                    return "";
             }
-
-            return "";
         }
     }
 }

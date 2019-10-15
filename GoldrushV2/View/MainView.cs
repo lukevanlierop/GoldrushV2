@@ -50,5 +50,11 @@ namespace GoldrushV2.View
                 count++;
             }
         }
+
+        public void ShowGameOver()
+        {
+            Console.Clear();
+            Console.WriteLine("See you!\nPress ENTER to close this window.");
+        }
     }
 }

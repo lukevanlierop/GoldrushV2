@@ -21,7 +21,7 @@ namespace GoldrushV2.Model
             _carts = new List<Cart>();
             _map = map;
             Score = 0;
-            GameSpeed = 200;
+            GameSpeed = 1000;
         }
 
         public void SpawnCart()

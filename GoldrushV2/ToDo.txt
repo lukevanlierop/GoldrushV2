@@ -1,6 +1,6 @@
 ﻿1. Collision van carts
 2. punten telling
-3. stop game als er op S word gedrukt
+=== 3. stop game als er op S word gedrukt ===
 4. sneller spelen naarmate er meer punten zijn
 5. update UI
 6. functionaliteiten boot
