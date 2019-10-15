@@ -53,7 +53,12 @@ namespace GoldrushV2.Controller
             while(_play)
             {
                 string key = _inputReader.GetInput();
-                ShiftSwitch(key);
+
+                if (key == "s")
+                    QuitGame();
+
+                else if (key != "")
+                    ShiftSwitch(key);
             }
             timer.Enabled = false;
         }
@@ -81,16 +86,8 @@ namespace GoldrushV2.Controller
 
         private void ShiftSwitch(string id)
         {
-            // Quit game when "s" is pressed
-            if (id == "s")
-                QuitGame();
-
-            // Switch when number is pressed
-            else if (id != "")
-            {
-                Switch sw = (Switch)_map.Find(Convert.ToInt32(id));
-                sw.Shift();
-            }
+            Switch sw = (Switch)_map.Find(Convert.ToInt32(id));
+            sw.Shift();
         }
     }
 }
