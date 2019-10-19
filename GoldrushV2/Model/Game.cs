@@ -31,7 +31,7 @@ namespace GoldrushV2.Model
             Random rnd = new Random();
 
             // Debug: Hardcode index on 1
-            int index = 1;
+            int index = 0;
 
             // Production: Random integer
             // int index = rnd.Next(0, 3);
@@ -51,23 +51,33 @@ namespace GoldrushV2.Model
                 _ship.CurrentTile = _map.First;
                 _map.First.Movable = _ship;
             }
-           
         }
 
         public void Move()
         {
             if(_ship != null)
             {
-                _ship.Move();
+                if(_map.Find(10).Movable == null)
+                    _ship.Move();
             }
 
             foreach(Cart cart in _carts)
             {
+                if (cart.CurrentTile.Icon == "D")
+                {
+                    // At a Dock. Empty cart, and add points
+                    cart.IsFull = false;
+                    // TODO: Add points + fill ship
+                }
+
                 cart.Move();
+
                 if (cart.HasCrashed())
+                {
                     // The cart has crashed and the
                     // game stops running.
                     Running = false;
+                }
             }
         }
     }

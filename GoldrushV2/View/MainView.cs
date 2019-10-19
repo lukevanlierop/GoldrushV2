@@ -51,6 +51,12 @@ namespace GoldrushV2.View
             }
         }
 
+        public void PrintHud(int score, int speed)
+        {
+            Console.WriteLine("Your Score: " + score);
+            Console.WriteLine("Game Speed: " + speed);
+        }
+
         public void ShowGameOver()
         {
             Console.Clear();

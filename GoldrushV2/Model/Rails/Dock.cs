@@ -12,7 +12,6 @@ namespace GoldrushV2.Model.Tiles
 
         public override bool CanMove(Tile tile)
         {
-
             return true;
         }
     }

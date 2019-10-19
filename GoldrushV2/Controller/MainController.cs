@@ -31,6 +31,7 @@ namespace GoldrushV2.Controller
             BuildMap();
             _mv.PrintMap(_map);
             _game = new Game(_map);
+            _mv.PrintHud(_game.Score, _game.GameSpeed);
             _inputReader = new InputReader();
             seconds = 0;
             PlayGame();
@@ -84,6 +85,7 @@ namespace GoldrushV2.Controller
                 }
 
                 _mv.PrintMap(_map);
+                _mv.PrintHud(_game.Score, _game.GameSpeed);
             }
             else
                 QuitGame();
