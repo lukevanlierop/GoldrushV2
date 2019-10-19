@@ -60,6 +60,7 @@ namespace GoldrushV2.Controller
                 else if (key != "")
                     ShiftSwitch(key);
             }
+
             timer.Enabled = false;
         }
 
