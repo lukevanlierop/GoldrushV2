@@ -14,7 +14,7 @@ namespace GoldrushV2.Model
         private Ship _ship;
 
         public int GameSpeed { get; }
-        public int Score { get; }
+        public int Score { get; set; }
         public bool Running { get; set; } = true;
 
         public Game(Map map)
@@ -57,17 +57,32 @@ namespace GoldrushV2.Model
         {
             if(_ship != null)
             {
+                // As long as Dock is unoccupied, keep moving
                 if(_map.Find(10).Movable == null)
                     _ship.Move();
+
+                // if Ship is full, keep moving
+                if (_ship.IsFull)
+                    _ship.Move();
+
+                // Ask map if it has Ship. If not, null it
+                if (!_map.HasShip())
+                    _ship = null;
             }
 
             foreach(Cart cart in _carts)
             {
-                if (cart.CurrentTile.Icon == "D")
+                // Check if both the cart and ship are at Dock
+                if (cart.IsAtDock())
                 {
-                    // At a Dock. Empty cart, and add points
-                    cart.IsFull = false;
-                    // TODO: Add points + fill ship
+                    // Check if there is a Ship, and if it's Docked
+                    if (_ship != null && _map.Find(10).Movable != null)
+                    {
+                        // At a Dock. Empty cart, and add points
+                        cart.IsFull = false;
+                        _ship.Load++;
+                        Score++;
+                    }
                 }
 
                 cart.Move();

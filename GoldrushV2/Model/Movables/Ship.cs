@@ -18,15 +18,25 @@ namespace GoldrushV2.Model.Movables
             }
         }
 
-        public override bool IsFull { get; set; } = false;
+        public override bool IsFull
+        {
+            get
+            {
+                if (Load == 3) { return true; }
+                else { return false; }
+            }
+            set { }
+        }
 
         public int Load { get; set; } = 0;
 
         public override void Move()
         {
             if (CurrentTile.Next == null)
+            {
                 // Go off the map
                 CurrentTile.Movable = null;
+            }
 
             else
             {
@@ -37,12 +47,6 @@ namespace GoldrushV2.Model.Movables
                     CurrentTile.Movable = this;
                 }
             }
-        }
-
-        public bool IsDocked() 
-        {
-            
-            return false;
         }
 
         public string GetIcon()
@@ -58,6 +62,15 @@ namespace GoldrushV2.Model.Movables
                 default:
                     return "X";
             }
+        }
+
+        public bool IsDocked(Tile underlayingTile)
+        {
+            // Check if the ship is docked by 
+            // looking at the underlaying tile. 
+            if (underlayingTile.Icon == "D")
+                return true;
+            return false;
         }
     }
 }

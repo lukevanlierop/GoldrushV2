@@ -56,5 +56,12 @@ namespace GoldrushV2.Model.Movables
         {
             return IsCrashed;
         }
+
+        public bool IsAtDock()
+        {
+            if (CurrentTile.Icon == "D")
+                return true;
+            return false;
+        }
     }
 }
