@@ -54,7 +54,7 @@ namespace GoldrushV2.View
         public void ShowGameOver()
         {
             Console.Clear();
-            Console.WriteLine("See you!\nPress ENTER to close this window.");
+            Console.WriteLine("The game is over. See you!\nPress ENTER to close this window.");
         }
     }
 }

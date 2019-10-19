@@ -71,17 +71,22 @@ namespace GoldrushV2.Controller
 
         private void OnTimedEvent(object source, ElapsedEventArgs e)
         {
-            _game.Move(); 
-            seconds++;
-
-            if (seconds == 5)
+            if (_game.Running)
             {
-                _game.SpawnCart();
-                _game.SpawnShip();
-                seconds = 0;
-            }
+                _game.Move();
+                seconds++;
 
-            _mv.PrintMap(_map);
+                if (seconds == 5)
+                {
+                    _game.SpawnCart();
+                    _game.SpawnShip();
+                    seconds = 0;
+                }
+
+                _mv.PrintMap(_map);
+            }
+            else
+                QuitGame();
         }
 
         private void ShiftSwitch(string id)

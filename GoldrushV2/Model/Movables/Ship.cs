@@ -20,7 +20,6 @@ namespace GoldrushV2.Model.Movables
             {
                 CurrentTile.Movable = null;
             }
-
         }
     }
 }

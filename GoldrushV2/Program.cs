@@ -12,8 +12,6 @@ namespace GoldrushV2
         static void Main(string[] args)
         {
             new MainController().Initialize();
-
-            Console.Read();
         }
     }
 }

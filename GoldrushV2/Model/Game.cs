@@ -15,6 +15,7 @@ namespace GoldrushV2.Model
 
         public int GameSpeed { get; }
         public int Score { get; }
+        public bool Running { get; set; } = true;
 
         public Game(Map map)
         {
@@ -28,7 +29,12 @@ namespace GoldrushV2.Model
         {
             int[] warehouses = new int[] { 37, 61, 85 };
             Random rnd = new Random();
-            int index = rnd.Next(0, 3);
+
+            // Debug: Hardcode index on 1
+            int index = 1;
+
+            // Production: Random integer
+            // int index = rnd.Next(0, 3);
 
             Tile SpawnTile = _map.Find(warehouses[index]);
 
@@ -54,11 +60,14 @@ namespace GoldrushV2.Model
             {
                 _ship.Move();
             }
-            
 
             foreach(Cart cart in _carts)
             {
                 cart.Move();
+                if (cart.HasCrashed())
+                    // The cart has crashed and the
+                    // game stops running.
+                    Running = false;
             }
         }
     }

@@ -20,6 +20,8 @@ namespace GoldrushV2.Model.Movables
             }
         }
 
+        private bool IsCrashed;
+
         public Cart(Tile tile)
         {
             CurrentTile = tile;
@@ -36,11 +38,23 @@ namespace GoldrushV2.Model.Movables
             {
                 if (CurrentTile.Next.CanMove(CurrentTile))
                 {
-                    CurrentTile.Movable = null;
-                    CurrentTile = CurrentTile.Next;
-                    CurrentTile.Movable = this;
+                    if (CurrentTile.Next.Movable != null)
+                        // Following tile contains a movable, so
+                        // this carts crash.
+                        this.IsCrashed = true;
+                    else
+                    {
+                        CurrentTile.Movable = null;
+                        CurrentTile = CurrentTile.Next;
+                        CurrentTile.Movable = this;
+                    }
                 }
             }
+        }
+
+        public bool HasCrashed()
+        {
+            return IsCrashed;
         }
     }
 }
