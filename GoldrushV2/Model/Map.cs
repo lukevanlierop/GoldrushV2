@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GoldrushV2.Model.Rails;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,6 +27,7 @@ namespace GoldrushV2.Model
 
             return null;
         }
+
 
         public bool HasShip()
         {

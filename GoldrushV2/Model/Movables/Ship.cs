@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GoldrushV2.Model.Tiles;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,7 @@ namespace GoldrushV2.Model.Movables
         {
             get
             {
-                if (Load == 3) { return true; }
+                if (Load == 8) { return true; }
                 else { return false; }
             }
             set { }
@@ -55,21 +56,22 @@ namespace GoldrushV2.Model.Movables
             {
                 case 1:
                     return "-";
-                case 2:
+                case 4:
                     return "=";
-                case 3:
+                case 8:
                     return "≡";
                 default:
                     return "X";
             }
         }
 
-        public bool IsDocked(Tile underlayingTile)
-        {
-            // Check if the ship is docked by 
-            // looking at the underlaying tile. 
-            if (underlayingTile.Icon == "D")
+        public bool IsDocked()
+        {  
+            if(((Water)CurrentTile).HasDock)
+            {
                 return true;
+            }
+
             return false;
         }
     }

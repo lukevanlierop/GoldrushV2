@@ -22,7 +22,7 @@ namespace GoldrushV2.Model
             _carts = new List<Cart>();
             _map = map;
             Score = 0;
-            GameSpeed = 1000;
+            GameSpeed = 200;
         }
 
         public void SpawnCart()
@@ -34,7 +34,7 @@ namespace GoldrushV2.Model
             int index = 0;
 
             // Production: Random integer
-            // int index = rnd.Next(0, 3);
+            //int index = rnd.Next(0, 3);
 
             Tile SpawnTile = _map.Find(warehouses[index]);
 
@@ -72,20 +72,13 @@ namespace GoldrushV2.Model
 
             foreach(Cart cart in _carts)
             {
-                // Check if both the cart and ship are at Dock
-                if (cart.IsAtDock())
-                {
-                    // Check if there is a Ship, and if it's Docked
-                    if (_ship != null && _map.Find(10).Movable != null)
-                    {
-                        // At a Dock. Empty cart, and add points
-                        cart.IsFull = false;
-                        _ship.Load++;
-                        Score++;
-                    }
-                }
-
                 cart.Move();
+
+                if(cart.CanGivePoints)
+                {
+                    Score++;
+                    cart.CanGivePoints = false;
+                }
 
                 if (cart.HasCrashed())
                 {

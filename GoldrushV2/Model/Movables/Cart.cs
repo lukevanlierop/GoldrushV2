@@ -10,6 +10,7 @@ namespace GoldrushV2.Model.Movables
     {
         public override Tile CurrentTile { get; set; }
         public override bool IsFull { get; set; } = true;
+        
 
         public override string Icon
         {
@@ -41,7 +42,7 @@ namespace GoldrushV2.Model.Movables
                     if (CurrentTile.Next.Movable != null)
                         // Following tile contains a movable, so
                         // this carts crash.
-                        this.IsCrashed = true;
+                        IsCrashed = true;
                     else
                     {
                         CurrentTile.Movable = null;
@@ -55,13 +56,6 @@ namespace GoldrushV2.Model.Movables
         public bool HasCrashed()
         {
             return IsCrashed;
-        }
-
-        public bool IsAtDock()
-        {
-            if (CurrentTile.Icon == "D")
-                return true;
-            return false;
         }
     }
 }

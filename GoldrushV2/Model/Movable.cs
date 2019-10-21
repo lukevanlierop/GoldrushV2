@@ -12,5 +12,6 @@ namespace GoldrushV2.Model
         public abstract void Move();
         public abstract string Icon { get; }
         public abstract bool IsFull { get; set; }
+        public bool CanGivePoints { get; set; } = false;
     }
 }

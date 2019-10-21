@@ -38,7 +38,7 @@ namespace GoldrushV2.Builder
                 _newTile = new Water();
                 if(i == 8)
                 {
-                    ((Water)_newTile).IsNextToDock = true;
+                    ((Water)_newTile).HasDock = true;
                 }
                 InitTile();
             }
