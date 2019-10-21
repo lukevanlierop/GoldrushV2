@@ -4,7 +4,3 @@
 4. sneller spelen naarmate er meer punten zijn DONE
 5. update UI
 === 6. functionaliteiten boot DONE
-
-
-bugs
-1. yards werken niet goed

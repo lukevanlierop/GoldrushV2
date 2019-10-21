@@ -34,10 +34,10 @@ namespace GoldrushV2.Model
             Random rnd = new Random();
 
             // Debug: Hardcode index on 1
-            //int index = 0;
+            int index = 2;
 
             // Production: Random integer
-            int index = rnd.Next(0, 3);
+            // int index = rnd.Next(0, 3);
 
             Tile SpawnTile = _map.Find(warehouses[index]);
 

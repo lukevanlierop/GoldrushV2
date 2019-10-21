@@ -30,6 +30,7 @@ namespace GoldrushV2.Model.Movables
 
         public override void Move()
         {
+            //cart moves off map
             if (CurrentTile.Next == null)
             {
                 CurrentTile.Movable = null;
@@ -39,10 +40,13 @@ namespace GoldrushV2.Model.Movables
             {
                 if (CurrentTile.Next.CanMove(CurrentTile))
                 {
+                    //check for crash
                     if (CurrentTile.Next.Movable != null)
-                        // Following tile contains a movable, so
-                        // this carts crash.
-                        IsCrashed = false;
+                    { 
+                        IsCrashed = true;
+                    }
+                    
+                    //move cart
                     else
                     {
                         CurrentTile.Movable = null;
