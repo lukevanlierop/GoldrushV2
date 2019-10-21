@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GoldrushV2.Model.Movables;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace GoldrushV2.Model.Tiles
     {
         private Movable _movable;
         public override string Icon { get; set; } = "D";
+        public Ship Ship { get; set; }
 
         public override Movable Movable
         {
@@ -21,6 +23,7 @@ namespace GoldrushV2.Model.Tiles
                 if (Movable != null)
                 {
                     Movable.IsFull = false;
+                    //Ship.Load++;
                     Movable.CanGivePoints = true;
                 }             
             }

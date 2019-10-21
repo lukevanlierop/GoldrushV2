@@ -27,28 +27,5 @@ namespace GoldrushV2.Model
 
             return null;
         }
-
-
-        public bool HasShip()
-        {
-            // TODO: Potential cleaner way to look up Ships?
-            // foreach(int id in Routes.water)
-            // {
-            //     if (Find(id).Movable != null)
-            //         return true;
-            //     return false;
-            // }
-
-            Tile current = First;
-            while (current.Id <= 12)
-            {
-                if (current.Movable != null)
-                {
-                    return true;
-                }
-                current = current.Right;
-            }
-            return false;
-        }
     }
 }

@@ -10,6 +10,7 @@ namespace GoldrushV2.Model.Movables
     public class Ship : Movable
     {
         public override Tile CurrentTile { get; set; }
+        public bool IsDocked { get; set; } = false;
 
         public override string Icon
         {
@@ -23,8 +24,16 @@ namespace GoldrushV2.Model.Movables
         {
             get
             {
-                if (Load == 8) { return true; }
-                else { return false; }
+                if (Load == 8)
+                {
+                    IsDocked = false;
+                    return true;
+                }
+
+                else
+                {
+                    return false;
+                }
             }
             set { }
         }
@@ -33,7 +42,13 @@ namespace GoldrushV2.Model.Movables
 
         public override void Move()
         {
-            if (CurrentTile.Next == null)
+            // if Ship is docked...
+            if(((Water)CurrentTile).HasDock)
+            {
+                IsDocked = true;
+            }
+
+            else if (CurrentTile.Next == null)
             {
                 // Go off the map
                 CurrentTile.Movable = null;
@@ -61,18 +76,8 @@ namespace GoldrushV2.Model.Movables
                 case 8:
                     return "≡";
                 default:
-                    return "X";
+                    return ">";
             }
-        }
-
-        public bool IsDocked()
-        {  
-            if(((Water)CurrentTile).HasDock)
-            {
-                return true;
-            }
-
-            return false;
         }
     }
 }

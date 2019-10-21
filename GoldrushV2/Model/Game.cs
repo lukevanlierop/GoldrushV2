@@ -1,4 +1,5 @@
 ﻿using GoldrushV2.Model.Movables;
+using GoldrushV2.Model.Tiles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,17 +58,7 @@ namespace GoldrushV2.Model
         {
             if(_ship != null)
             {
-                // As long as Dock is unoccupied, keep moving
-                if(_map.Find(10).Movable == null)
-                    _ship.Move();
-
-                // if Ship is full, keep moving
-                if (_ship.IsFull)
-                    _ship.Move();
-
-                // Ask map if it has Ship. If not, null it
-                if (!_map.HasShip())
-                    _ship = null;
+                _ship.Move();
             }
 
             foreach(Cart cart in _carts)

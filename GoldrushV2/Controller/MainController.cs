@@ -81,8 +81,7 @@ namespace GoldrushV2.Controller
                 if (seconds == 5)
                 {
                     _game.SpawnCart();
-                    if(!_map.HasShip())
-                        _game.SpawnShip();
+                    _game.SpawnShip();
                     seconds = 0;
                 }
 
