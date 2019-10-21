@@ -1,9 +1,9 @@
-﻿=== 1. Collision van carts ===
-=== 2. punten telling ===
-=== 3. stop game als er op S word gedrukt ===
-4. sneller spelen naarmate er meer punten zijn
+﻿=== 1. Collision van carts === DONE
+=== 2. punten telling === DONE
+=== 3. stop game als er op S word gedrukt === DONE
+4. sneller spelen naarmate er meer punten zijn DONE
 5. update UI
-=== 6. functionaliteiten boot
+=== 6. functionaliteiten boot DONE
 
 
 bugs

@@ -20,11 +20,14 @@ namespace GoldrushV2.Model.Tiles
             {
                 _movable = value;
 
-                if (Movable != null)
+                if (Movable != null && Ship != null)
                 {
-                    Movable.IsFull = false;
-                    //Ship.Load++;
-                    Movable.CanGivePoints = true;
+                    if(Ship.IsDocked)
+                    {
+                        Movable.IsFull = false;
+                        Movable.CanGivePoints = true;
+                        Ship.Load++;
+                    } 
                 }             
             }
         }

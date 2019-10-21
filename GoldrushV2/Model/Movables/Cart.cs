@@ -42,7 +42,7 @@ namespace GoldrushV2.Model.Movables
                     if (CurrentTile.Next.Movable != null)
                         // Following tile contains a movable, so
                         // this carts crash.
-                        IsCrashed = true;
+                        IsCrashed = false;
                     else
                     {
                         CurrentTile.Movable = null;

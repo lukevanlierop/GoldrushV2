@@ -13,8 +13,9 @@ namespace GoldrushV2.Model
         private List<Cart> _carts;
         private Map _map;
         private Ship _ship;
+        private Dock _dock;
 
-        public int GameSpeed { get; }
+        public int GameSpeed { get; set; }
         public int Score { get; set; }
         public bool Running { get; set; } = true;
 
@@ -23,7 +24,8 @@ namespace GoldrushV2.Model
             _carts = new List<Cart>();
             _map = map;
             Score = 0;
-            GameSpeed = 200;
+            GameSpeed = 666;
+            _dock = (Dock)_map.Find(22);
         }
 
         public void SpawnCart()
@@ -32,10 +34,10 @@ namespace GoldrushV2.Model
             Random rnd = new Random();
 
             // Debug: Hardcode index on 1
-            int index = 0;
+            //int index = 0;
 
             // Production: Random integer
-            //int index = rnd.Next(0, 3);
+            int index = rnd.Next(0, 3);
 
             Tile SpawnTile = _map.Find(warehouses[index]);
 
@@ -44,13 +46,30 @@ namespace GoldrushV2.Model
             _carts.Add(cart);
         }
 
+        public void IncreaseGameSpeed()
+        {
+            if(GameSpeed > 100)
+            {
+                GameSpeed -= Score * 3;
+            }
+        }
+
         public void SpawnShip()
         {
+            if(_ship != null)
+            {
+                if (_ship.IsOffMap)
+                {
+                    _ship = null;
+                }
+            }
+           
             if(_ship == null)
             {
                 _ship = new Ship();
                 _ship.CurrentTile = _map.First;
                 _map.First.Movable = _ship;
+                _dock.Ship = _ship;
             }
         }
 
@@ -59,6 +78,12 @@ namespace GoldrushV2.Model
             if(_ship != null)
             {
                 _ship.Move();
+                if(_ship.CanGivePoints)
+                {
+                    Score += 10;
+                    _ship.CanGivePoints = false;
+                    IncreaseGameSpeed();
+                }
             }
 
             foreach(Cart cart in _carts)
@@ -77,7 +102,7 @@ namespace GoldrushV2.Model
                     // game stops running.
                     Running = false;
                 }
-            }
+            } 
         }
     }
 }

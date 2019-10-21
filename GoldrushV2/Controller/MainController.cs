@@ -20,6 +20,7 @@ namespace GoldrushV2.Controller
         private InputReader _inputReader;
         private int seconds;
         private bool _play;
+        private Timer _timer;
 
         public MainController()
         {
@@ -45,10 +46,10 @@ namespace GoldrushV2.Controller
 
         private void PlayGame()
         {
-            Timer timer = new Timer();
-            timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            timer.Interval = _game.GameSpeed;
-            timer.Enabled = true;
+            _timer = new Timer();
+            _timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+            _timer.Interval = _game.GameSpeed;
+            _timer.Enabled = true;
             _play = true;
 
             while(_play)
@@ -62,7 +63,7 @@ namespace GoldrushV2.Controller
                     ShiftSwitch(key);
             }
 
-            timer.Enabled = false;
+            _timer.Enabled = false;
         }
 
         private void QuitGame()
@@ -87,6 +88,7 @@ namespace GoldrushV2.Controller
 
                 _mv.PrintMap(_map);
                 _mv.PrintHud(_game.Score, _game.GameSpeed);
+                _timer.Interval = _game.GameSpeed;
             }
             else
                 QuitGame();
