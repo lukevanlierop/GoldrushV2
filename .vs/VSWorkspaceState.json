@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\GoldrushV2"
+    "\\GoldrushV2",
+    "\\GoldrushV2\\View"
   ],
-  "SelectedNode": "\\GoldrushV2",
+  "SelectedNode": "\\GoldrushV2\\View\\MainView.cs",
   "PreviewInSolutionExplorer": false
 }

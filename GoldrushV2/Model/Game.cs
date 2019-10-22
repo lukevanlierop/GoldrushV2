@@ -1,4 +1,5 @@
 ﻿using GoldrushV2.Model.Movables;
+using GoldrushV2.Model.Rails;
 using GoldrushV2.Model.Tiles;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace GoldrushV2.Model
     class Game
     {
         private List<Cart> _carts;
+        private List<Warehouse> _warehouses;
         private Map _map;
         private Ship _ship;
         private Dock _dock;
@@ -26,23 +28,18 @@ namespace GoldrushV2.Model
             Score = 0;
             GameSpeed = 666;
             _dock = (Dock)_map.Find(22);
+            _warehouses = new List<Warehouse>();
+            _warehouses.Add((Warehouse)_map.Find(37));
+            _warehouses.Add((Warehouse)_map.Find(61));
+            _warehouses.Add((Warehouse)_map.Find(85));
         }
 
         public void SpawnCart()
         {
-            int[] warehouses = new int[] { 37, 61, 85 };
-            Random rnd = new Random();
+            // Ask warehouse to generate the cart
+            Cart cart = _warehouses[new Random().Next(0, 3)].GenerateCart();
 
-            // Debug: Hardcode index on 1
-            int index = 2;
-
-            // Production: Random integer
-            // int index = rnd.Next(0, 3);
-
-            Tile SpawnTile = _map.Find(warehouses[index]);
-
-            Cart cart = new Cart(SpawnTile);
-            SpawnTile.Movable = cart;
+            // Register the new cart in the list
             _carts.Add(cart);
         }
 
@@ -98,8 +95,6 @@ namespace GoldrushV2.Model
 
                 if (cart.HasCrashed())
                 {
-                    // The cart has crashed and the
-                    // game stops running.
                     Running = false;
                 }
             } 

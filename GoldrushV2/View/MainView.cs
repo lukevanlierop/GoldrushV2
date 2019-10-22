@@ -28,7 +28,6 @@ namespace GoldrushV2.View
                     {
                         Console.Write(current.Icon);
                     }
-                    // Console.Write(current.Id + " ");
                 }
 
                 else
@@ -42,7 +41,6 @@ namespace GoldrushV2.View
                     {
                         Console.WriteLine(current.Icon);
                     }
-                    //Console.WriteLine(current.Id + " ");
                     count = 0;
                 }
 
@@ -53,8 +51,12 @@ namespace GoldrushV2.View
 
         public void PrintHud(int score, int speed)
         {
-            Console.WriteLine("Your Score: " + score);
-            Console.WriteLine("Game Speed: " + speed);
+            Console.WriteLine();
+            Console.WriteLine("Score: " + score);
+            Console.WriteLine("Speed: " + speed);
+            Console.WriteLine();
+            Console.WriteLine("Controls:\n[12345] : Control Switches");
+            Console.WriteLine("[S]     : Quit game");
         }
 
         public void ShowGameOver()

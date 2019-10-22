@@ -8,7 +8,7 @@ namespace GoldrushV2.Model.Tiles
 {
     public class Water : Tile
     {
-        public override string Icon { get; set;} = "~";
+        public override string Icon { get; set;} = "░";
         public override Movable Movable { get; set; }
         public bool HasDock { get; set; } = false;
 

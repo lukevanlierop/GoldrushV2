@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GoldrushV2.Builder.MapBuilder" Collapsed="true">
+    <Position X="9.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAEAAAAACAAhAAAAECABAAAEAA=</HashCode>
+      <FileName>Builder\MapBuilder.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_map" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GoldrushV2.Controller.MainController" Collapsed="true">
+    <Position X="5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAgAQABAAAAAIAAAACIAAAABEAAAAACARQ=</HashCode>
+      <FileName>Controller\MainController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_map" />
+      <Field Name="_game" />
+      <Field Name="_inputReader" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GoldrushV2.Model.Game" Collapsed="true">
+    <Position X="5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACABAAEMAAAAgAAAAAAAAAAAAIAAAIAEgAAAAAGAA=</HashCode>
+      <FileName>Model\Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GoldrushV2.Model.Map" Collapsed="true">
+    <Position X="7" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Map.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GoldrushV2.Model.Movable" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAIAAAAAAAAAAAAAAAAAAAAAIAAAAAAEAAAA=</HashCode>
+      <FileName>Model\Movable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GoldrushV2.Model.Routes" Collapsed="true">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAJAAAAAAAAAAAAAAAAAAAAAAAAAIAAAgAAAAAA=</HashCode>
+      <FileName>Model\Routes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GoldrushV2.Model.Tile" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgACACAQAAAAAAAAAAAAAAAAAAAAAAAAAACAAAEAAAA=</HashCode>
+      <FileName>Model\Tile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GoldrushV2.Model.Movables.Cart" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAIIAAAAAAEAAQA=</HashCode>
+      <FileName>Model\Movables\Cart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GoldrushV2.Model.Movables.Ship" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAiAAAAIAAACAAAAAAAAAAAAAAAAAIAAAAAAEAAAA=</HashCode>
+      <FileName>Model\Movables\Ship.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GoldrushV2.Model.Tiles.Rail" Collapsed="true">
+    <Position X="7" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Model\Rail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GoldrushV2.Model.Tiles.Dock" Collapsed="true">
+    <Position X="4.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAQAAAAAAAAAAAAABAAAACAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Model\Rails\Dock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GoldrushV2.Model.Tiles.Empty" Collapsed="true">
+    <Position X="1" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Model\Tiles\Empty.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GoldrushV2.Model.Tiles.Water" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAQAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Model\Tiles\Water.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GoldrushV2.Model.Rails.BackwardSwitch" Collapsed="true">
+    <Position X="5.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Rails\BackwardSwitch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GoldrushV2.Model.Rails.ForwardSwitch" Collapsed="true">
+    <Position X="7" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Rails\ForwardSwitch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GoldrushV2.Model.Rails.Switch" Collapsed="true">
+    <Position X="6.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAQACAAAAAAAggAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Model\Rails\Switch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GoldrushV2.Model.Rails.Warehouse" Collapsed="true">
+    <Position X="8" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAEAAAA=</HashCode>
+      <FileName>Model\Rails\Warehouse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GoldrushV2.Model.Rails.Yard" Collapsed="true">
+    <Position X="9.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Model\Rails\Yard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GoldrushV2.Program" Collapsed="true">
+    <Position X="0.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GoldrushV2.Util.InputReader" Collapsed="true">
+    <Position X="3" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Util\InputReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GoldrushV2.View.MainView" Collapsed="true">
+    <Position X="0.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAQAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\MainView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
