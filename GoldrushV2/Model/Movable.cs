@@ -13,5 +13,7 @@ namespace GoldrushV2.Model
         public abstract string Icon { get; }
         public abstract bool IsFull { get; set; }
         public bool CanGivePoints { get; set; } = false;
+        public abstract int Points { get; }
+        public bool HasCrashed { get; set; } = false;
     }
 }

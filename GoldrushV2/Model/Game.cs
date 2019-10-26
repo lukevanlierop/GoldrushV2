@@ -11,7 +11,7 @@ namespace GoldrushV2.Model
 {
     class Game
     {
-        private List<Cart> _carts;
+        private List<Movable> _movables;
         private List<Warehouse> _warehouses;
         private Map _map;
         private Ship _ship;
@@ -23,7 +23,7 @@ namespace GoldrushV2.Model
 
         public Game(Map map)
         {
-            _carts = new List<Cart>();
+            _movables = new List<Movable>();
             _map = map;
             Score = 0;
             GameSpeed = 666;
@@ -40,7 +40,7 @@ namespace GoldrushV2.Model
             Cart cart = _warehouses[new Random().Next(0, 3)].GenerateCart();
 
             // Register the new cart in the list
-            _carts.Add(cart);
+            _movables.Add(cart);
         }
 
         public void IncreaseGameSpeed()
@@ -67,37 +67,27 @@ namespace GoldrushV2.Model
                 _ship.CurrentTile = _map.First;
                 _map.First.Movable = _ship;
                 _dock.Ship = _ship;
+                _movables.Add(_ship);
             }
         }
 
         public void Move()
         {
-            if(_ship != null)
+            foreach(Movable movable in _movables)
             {
-                _ship.Move();
-                if(_ship.CanGivePoints)
+                movable.Move();
+                if(movable.CanGivePoints)
                 {
-                    Score += 10;
-                    _ship.CanGivePoints = false;
+                    Score += movable.Points;
+                    movable.CanGivePoints = false;
                     IncreaseGameSpeed();
                 }
-            }
 
-            foreach(Cart cart in _carts)
-            {
-                cart.Move();
-
-                if(cart.CanGivePoints)
-                {
-                    Score++;
-                    cart.CanGivePoints = false;
-                }
-
-                if (cart.HasCrashed())
+                if (movable.HasCrashed)
                 {
                     Running = false;
                 }
-            } 
+            }
         }
     }
 }

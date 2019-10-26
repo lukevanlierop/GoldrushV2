@@ -42,6 +42,8 @@ namespace GoldrushV2.Model.Movables
 
         public int Load { get; set; } = 0;
 
+        public override int Points { get; } = 10;
+
         public override void Move()
         {
             // if Ship is docked
